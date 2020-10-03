@@ -1,11 +1,14 @@
 import React from 'react';
-import Photo from "./Photo"
+
+function Movie( {title} ) {
+  return <h1>The Movie Title is {title}</h1>
+}
 
 function App() {
   return (
     <div className="App">
       <h1>Hello World!!</h1>
-      <Photo/>
+      <Movie title="itaewon" />
     </div>
   );
 }
