@@ -1,14 +1,36 @@
 import React from 'react';
 
-function Movie( {title} ) {
-  return <h1>The Movie Title is {title}</h1>
+function Gallery( {name, image} ) {
+  return <div>
+    <h1>The Gallery Name is {name}</h1>
+    <img src={image} />
+  </div>
 }
+
+const galleryArr = [
+  {
+    name:"ishii cho sayaney #1",
+    img_url:"https://www.sayaney.com/wp-content/uploads/2020/09/0008-701x1024-640x480.jpg"
+  },
+  {
+    name:"ishii cho sayaney #2",
+    img_url:"https://www.sayaney.com/wp-content/uploads/2020/09/0033-701x1024-640x480.jpg"
+  },
+  {
+    name:"ishii cho sayaney #3",
+    img_url:"https://www.sayaney.com/wp-content/uploads/2020/09/0032-701x1024-640x480.jpg"
+  }
+];
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>Hello World!!</h1>
-      <Movie title="itaewon" />
+      {
+        galleryArr.map( (glyObj) => {
+          return <Gallery name = {glyObj.name} image = {glyObj.img_url} />
+        } )
+      }
     </div>
   );
 }
