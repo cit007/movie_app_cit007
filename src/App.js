@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 class App extends React.Component {
   state = {
+    isLoading: true,
+    movie: [],
     count: 0,
   };
 
@@ -26,6 +28,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 3000);
+
     console.log("did mount");
   }
 
@@ -38,8 +44,11 @@ class App extends React.Component {
   }
   render() {
     console.log("render");
+    // const isLoading = this.state.isLoading;
+    const { isLoading } = this.state;
     return (
       <div>
+        {isLoading ? "Loading...." : "We are ready"}
         <h1>the number is: {this.state.count}</h1>
         <button onClick={this.add}>Add</button>
         <button onClick={this.minus}>Minux</button>
