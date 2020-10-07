@@ -10,8 +10,10 @@ function Movie({ year, title, summary, poster, genres }) {
         <h3 className="movie_title">{title}</h3>
         <h4 className="movie_year">{year}</h4>
         <ul className="genres">
-          {genres.map((genre) => (
-            <li className="genres_genre">{genre}</li>
+          {genres.map((genre, index) => (
+            <li key={index} className="genres_genre">
+              {genre}
+            </li>
           ))}
         </ul>
         <h4 className="movie_summary">{summary}</h4>
@@ -21,7 +23,6 @@ function Movie({ year, title, summary, poster, genres }) {
 }
 
 Movie.propTypes = {
-  id: PropTypes.number.isRequired,
   year: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
