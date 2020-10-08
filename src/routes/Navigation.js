@@ -4,16 +4,10 @@ import "./Navigation.css";
 
 function Navigation() {
   return (
-    <div className="top_menu">
+    <div className="nav_menu">
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
       </nav>
     </div>
   );

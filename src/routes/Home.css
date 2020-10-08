@@ -14,10 +14,12 @@ body {
 
 html,
 body,
-#potato,
 .container {
   height: 100%;
   display: flex;
+}
+
+.container {
   justify-content: center;
 }
 
