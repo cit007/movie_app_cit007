@@ -1,57 +1,28 @@
 import React from "react";
-import axios from "axios";
-import Movie from "./Movie";
-import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import About from "./routes/About";
+import Home from "./routes/Home";
+import Navigation from "./routes/Navigation";
 
-class App extends React.Component {
-  state = {
-    isLoading: true,
-    movies: [],
-  };
+function App() {
+  return (
+    <Router>
+      <Navigation />
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/about" component={About} />
 
-  getMovies = async () => {
-    const {
-      data: {
-        data: { movies },
-      },
-    } = await axios.get(
-      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
-    );
-    // console.log(movies);
-
-    this.setState({ isLoading: false, movies: movies });
-  };
-
-  componentDidMount() {
-    this.getMovies();
-  }
-
-  render() {
-    const { isLoading, movies } = this.state;
-    return (
-      <div className="container">
-        {isLoading ? (
-          <div className="loader">
-            <span className="loader_text"></span>
-          </div>
-        ) : (
-          <div className="movies">
-            {movies.map((movie) => (
-              <Movie
-                key={movie.id}
-                id={movie.id}
-                year={movie.year}
-                title={movie.title}
-                summary={movie.summary}
-                poster={movie.medium_cover_image}
-                genres={movie.genres}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  }
+      {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+      {/* <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch> */}
+    </Router>
+  );
 }
 
 export default App;
