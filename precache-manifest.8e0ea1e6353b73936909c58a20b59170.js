@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a7c9b42023a3fd25a822dbbc670ab053",
+    "revision": "5f90582ab8252172789def799177676e",
     "url": "/movie_app_cit007/index.html"
   },
   {
-    "revision": "dfec0fb0599f750af827",
+    "revision": "3cababa6216f98914e51",
     "url": "/movie_app_cit007/static/css/main.8efe2c65.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/movie_app_cit007/static/js/2.24ebc551.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dfec0fb0599f750af827",
-    "url": "/movie_app_cit007/static/js/main.b947cd2e.chunk.js"
+    "revision": "3cababa6216f98914e51",
+    "url": "/movie_app_cit007/static/js/main.1d9b3aa4.chunk.js"
   },
   {
     "revision": "2e55b4d3f3a026224ec6",
