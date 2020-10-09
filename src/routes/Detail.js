@@ -2,10 +2,6 @@ import React from "react";
 import "./Detail.css";
 
 class Detail extends React.Component {
-  componentDidMount() {
-    const { location, history } = this.props;
-  }
-
   render() {
     const { location, history } = this.props;
     console.log(this);
@@ -16,7 +12,7 @@ class Detail extends React.Component {
     return (
       <div className="detail_container">
         <div>
-          <img src={location.state.image} />
+          <img src={location.state.image} alt={location.state.title} />
         </div>
         <div className="detail_contents">
           <h3 className="detail_title">{location.state.title}</h3>

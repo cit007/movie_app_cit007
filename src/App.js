@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from "react-router-dom";
 import About from "./routes/About";
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
@@ -9,19 +14,12 @@ function App() {
   return (
     <Router>
       <Navigation />
-      <Route path="/" exact={true} component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/detail/:id" component={Detail} />
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-      {/* <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch> */}
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/detail/:id" component={Detail} />
+        <Redirect path="*" to="/" />
+      </Switch>
     </Router>
   );
 }
