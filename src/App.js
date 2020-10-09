@@ -15,7 +15,7 @@ function App() {
     <Router>
       <Navigation />
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/detail/:id" component={Detail} />
         <Redirect path="*" to="/" />
