@@ -1,3 +1,14 @@
+# Titles
+ * Simple Movie App
+ 
+# Introduction - the project's aim
+ This program retrieve the movie list using https://yts.mx/api
+ and list it to the screen
+ 
+# Technologies
+ Reactjs : javascript
+ Simple html/Css
+ 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
